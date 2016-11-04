@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8C3810EA1DCCC8FC00229952 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		8C47E7731DCB82F40097A58C /* SURF&FeatureDetection */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SURF&FeatureDetection"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C47E7761DCB82F40097A58C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,11 +39,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C3810E91DCCC8FC00229952 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C3810EA1DCCC8FC00229952 /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8C47E76A1DCB82F40097A58C = {
 			isa = PBXGroup;
 			children = (
 				8C47E7751DCB82F40097A58C /* SURF&FeatureDetection */,
 				8C47E7741DCB82F40097A58C /* Products */,
+				8C3810E91DCCC8FC00229952 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,12 +232,17 @@
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				OTHER_LDFLAGS = (
 					"-lopencv_core",
-					"\n-lopencv_highgui\n-lopencv_imgproc\n-lopencv_video",
-					"\n-lopencv_contrib",
-					"\n-lopencv_legacy",
-					"\n-lopencv_flann",
-					"\n-lopencv_features2d\n",
+					"-lopencv_highgui",
+					"-lopencv_imgproc",
+					"-lopencv_video",
+					"-lopencv_contrib",
+					"-lopencv_legacy",
+					"-lopencv_flann",
+					"-lopencv_features2d",
+					/usr/local/lib/libopencv_features2d.2.4.13.dylib,
+					/usr/local/lib/libopencv_nonfree.2.4.13.dylib,
 				);
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -240,12 +255,17 @@
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				OTHER_LDFLAGS = (
 					"-lopencv_core",
-					"\n-lopencv_highgui\n-lopencv_imgproc\n-lopencv_video",
-					"\n-lopencv_contrib",
-					"\n-lopencv_legacy",
-					"\n-lopencv_flann",
-					"\n-lopencv_features2d\n",
+					"-lopencv_highgui",
+					"-lopencv_imgproc",
+					"-lopencv_video",
+					"-lopencv_contrib",
+					"-lopencv_legacy",
+					"-lopencv_flann",
+					"-lopencv_features2d",
+					/usr/local/lib/libopencv_features2d.2.4.13.dylib,
+					/usr/local/lib/libopencv_nonfree.2.4.13.dylib,
 				);
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -269,6 +289,7 @@
 				8C47E77C1DCB82F40097A58C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
